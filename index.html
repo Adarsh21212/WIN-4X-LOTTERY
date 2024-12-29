@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Win 4X Lottery</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #0d0d0d;
+      color: #fff;
+    }
+
+    /* Glowing Effects */
+    h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+      margin-bottom: 30px;
+    }
+
+    .box {
+      width: 90%;
+      max-width: 500px;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 60px #00ffff;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #0ff;
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+    }
+
+    input[type="radio"] {
+      margin: 5px;
+      accent-color: #00ffff;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 0 10px #fff;
+      background-color: #00ffff;
+      color: #000;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0ff;
+      text-shadow: 0 0 5px #0ff;
+      margin-top: 10px;
+      display: block;
+    }
+
+    a:hover {
+      text-shadow: 0 0 10px #00ffff;
+    }
+  </style>
+</head>
+<body>
+  <h1>WIN 4X LOTTERY</h1>
+
+  <!-- Input Box for Number -->
+  <div class="box">
+    <h2>Enter a 3-Digit Of Period Number</h2>
+    <input type="text" id="numberInput" placeholder="Enter 3-digit of period number" maxlength="3">
+    <button class="btn" onclick="predict()">RESULT</button>
+  </div>
+
+  <!-- Prediction Box -->
+  <div class="box" id="predictionBox">
+    <h2>PLAY WITH BEST SERVER</h2>
+    <div id="prediction">RESULT.</div>
+  </div>
+
+  <!-- Server Selection -->
+  <div class="box">
+    <h2>Select Server</h2>
+    <label><input type="radio" name="server" value="Server 1"> Server 1</label>
+    <label><input type="radio" name="server" value="Server 2"> Server 2</label>
+    <label><input type="radio" name="server" value="Server 3"> Server 3</label>
+    <label><input type="radio" name="server" value="Server 4"> Server 4</label>
+  </div>
+
+  <!-- Telegram Channel Link -->
+  <div class="box">
+    <h2>GAME</h2>
+    <a href="http://win4xlottery.in/register?r_code=WIwcS25078" target="_blank">Click here to join</a>
+  </div>
+
+  <script>
+    // Predict Big/Small Based on Input
+    function predict() {
+      const input = document.getElementById("numberInput").value;
+      const predictionBox = document.getElementById("prediction");
+
+      // Validate input
+      if (!/^\d{3}$/.test(input)) {
+        predictionBox.textContent = "Please enter a valid 3-digit number.";
+        return;
+      }
+
+      // Generate random prediction
+      const predictions = ["Big", "Small"];
+      const randomPrediction = predictions[Math.floor(Math.random() * predictions.length)];
+
+      predictionBox.textContent = ` ${input}: ${randomPrediction}`;
+    }
+  </script>
+</body>
+</html>
